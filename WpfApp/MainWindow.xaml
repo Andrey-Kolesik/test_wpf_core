@@ -1,0 +1,45 @@
+﻿<Window x:Class="WpfApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" x:Name="mainWind" WindowState="Maximized">
+    
+    <Grid x:Name="panel">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <!-- Устанавливаем три столбца -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="0" Grid.ColumnSpan="3">
+            <WrapPanel>
+                <DatePicker x:Name="DP1" FontSize="24" AllowDrop="false" SelectedDateFormat="Long" SelectedDateChanged="DP1_SelectedDateChanged" Width="300" Margin="20 0">
+                </DatePicker>
+                <TextBlock Text="-" FontSize="32" ></TextBlock>
+                <DatePicker x:Name="DP2" FontSize="24" AllowDrop="false" SelectedDateFormat="Long" SelectedDateChanged="DP2_SelectedDateChanged" Width="300" Margin="20 0">
+                </DatePicker>
+                <ComboBox Name="currency" Height="30" VerticalAlignment="Top" Width="300" Margin="20 0" Text="Выберите валюту" IsEditable="True" IsReadOnly="True">
+                    <ComboBoxItem>
+                        <TextBlock>USD</TextBlock>
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        <TextBlock>EUR</TextBlock>
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        <TextBlock>RUS</TextBlock>
+                    </ComboBoxItem>
+                </ComboBox>
+            </WrapPanel>
+            
+        <Button x:Name="Button_CreateChart" Content="Получить" Click="Button_CreateChart_Click" Height="40" Width="100" Margin="20"/>
+        </StackPanel>
+        <WpfPlot Name="Chart" Width="1400" Height="600" Grid.Row="1" Grid.ColumnSpan="3"/>
+    </Grid>
+</Window>

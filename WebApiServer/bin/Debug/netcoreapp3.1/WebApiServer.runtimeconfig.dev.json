@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\romse\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\romse\\.nuget\\packages"
+    ]
+  }
+}
